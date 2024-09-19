@@ -1,0 +1,841 @@
+[2024-09-17T08:14:41.468+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-17T08:14:41.485+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: real_estate_pipeline.push_novel manual__2024-09-17T08:13:18.194706+00:00 [queued]>
+[2024-09-17T08:14:41.500+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: real_estate_pipeline.push_novel manual__2024-09-17T08:13:18.194706+00:00 [queued]>
+[2024-09-17T08:14:41.507+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-09-17T08:14:41.549+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): push_novel> on 2024-09-17 08:13:18.194706+00:00
+[2024-09-17T08:14:41.557+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'real_estate_pipeline', 'push_novel', 'manual__2024-09-17T08:13:18.194706+00:00', '--job-id', '104', '--raw', '--subdir', 'DAGS_FOLDER/real_estate_dag.py', '--cfg-path', '/tmp/tmpfw96i05i']
+[2024-09-17T08:14:41.559+0000] {standard_task_runner.py:105} INFO - Job 104: Subtask push_novel
+[2024-09-17T08:14:41.567+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=413) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-17T08:14:41.568+0000] {standard_task_runner.py:72} INFO - Started process 430 to run task
+[2024-09-17T08:14:41.635+0000] {task_command.py:467} INFO - Running <TaskInstance: real_estate_pipeline.push_novel manual__2024-09-17T08:13:18.194706+00:00 [running]> on host 1083859d72d8
+[2024-09-17T08:14:41.750+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='real_estate_pipeline' AIRFLOW_CTX_TASK_ID='push_novel' AIRFLOW_CTX_EXECUTION_DATE='2024-09-17T08:13:18.194706+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-17T08:13:18.194706+00:00'
+[2024-09-17T08:14:41.751+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-17T08:14:41.810+0000] {logging_mixin.py:190} INFO - Failed to send data. Status Code: 500, Response: <!doctype html>
+<html lang=en>
+  <head>
+    <title>sqlalchemy.exc.StatementError: (builtins.TypeError) SQLite Date type only accepts Python date objects as input.
+[SQL: INSERT INTO property (link, code, description, images, lastmodifiedon, municipality, location, surfacearea, numberofrooms, numberofsleepingroms, floornumber, interior, numberofbathrooms, balcony, yard, airconditioning, heating, propertysheet, price, deposit, commission, elevator, newbuilding, shortstay, electricheating, orientation, kitchenappliances, yearofconstruction, renovated, parking, basement, internet, cabletv, students) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id]
+[parameters: [{&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;2 тераси\xa0&#39;, &#39;code&#39;: &#39;E1900&#39;, &#39;price&#39;: &#39;520\xa0€&#39;, &#39;surfacearea&#39;: &#39;106\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;11/09/2024 \ ... (659 characters truncated) ... mages&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;C0446&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;1300\xa0€&#39;, &#39;surfacearea&#39;: &#39;300\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \xa0&#39;, &#39;mu ... (636 characters truncated) ...  None, &#39;yearofconstruction&#39;: None, &#39;numberofbathrooms&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None, &#39;numberofrooms&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;A5587&#39;, &#39;price&#39;: &#39;500\xa0€&#39;, &#39;surfacearea&#39;: &#39;115\xa0m²&#39;, &#39;electricheating&#39;: True, &#39;lastmodifiedon&#39;: &#39;12/09/2024 \xa ... (636 characters truncated) ... nappliances&#39;: None, &#39;newbuilding&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;2 тераси  \xa0&#39;, &#39;code&#39;: &#39;A11568&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;500\xa0€&#39;, &#39;surfacearea&#39;: &#39;86\xa0m²&#39;, &#39;lastmodifie ... (651 characters truncated) ... e, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A12565&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;400\xa0€&#39;, &#39;surfacearea&#39;: &#39;70\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;0 ... (639 characters truncated) ... tion&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;француска\xa0&#39;, &#39;code&#39;: &#39;A11907&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;500\xa0€&#39;, &#39;surfacearea&#39;: &#39;84\xa0m²&#39;, &#39;lastmodified ... (687 characters truncated) ... e, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;C0598&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;1500\xa0€&#39;, &#39;surfacearea&#39;: &#39;270\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39; ... (663 characters truncated) ... appliances&#39;: None, &#39;newbuilding&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;E1840&#39;, &#39;price&#39;: &#39;700\xa0€&#39;, &#39;surfacearea&#39;: &#39;85\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/05/2023 \xa0&#39;, &#39;municipality&#39;: &#39;Цента ... (606 characters truncated) ...  None, &#39;yard&#39;: None, &#39;cabletv&#39;: None, &#39;numberofsleepingroms&#39;: None, &#39;images&#39;: None, &#39;yearofconstruction&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None}, {&#39;code&#39;: &#39;H0240&#39;, &#39;price&#39;: &#39;Please contact&#39;, &#39;surfacearea&#39;: &#39;2399\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;04/10/2023 \xa0&#39;, &#39;municipality&#39;: &#39;Пробиштип\xa0&#39;, &#39;yard&#39; ... (1022 characters truncated) ... , &#39;images&#39;: None, &#39;kitchenappliances&#39;: None, &#39;numberofbathrooms&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None, &#39;deposit&#39;: None, &#39;numberofrooms&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;15m2\xa0&#39;, &#39;code&#39;: &#39;A13520&#39;, &#39;price&#39;: &#39;550\xa0€&#39;, &#39;surfacearea&#39;: &#39;83\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \xa0&#39; ... (657 characters truncated) ...  None, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A14633&#39;, &#39;price&#39;: &#39;600\xa0€&#39;, &#39;surfacearea&#39;: &#39;76\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;12/09/2024 \xa0&#39;,  ... (657 characters truncated) ... ction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;code&#39;: &#39;H0246&#39;, &#39;price&#39;: &#39;Please contact&#39;, &#39;surfacearea&#39;: &#39;800\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;11/09/2024 \xa0&#39;, &#39;municipality&#39;: &#39;Карпош 3\xa0&#39;, &#39;interio ... (598 characters truncated) ... struction&#39;: None, &#39;numberofbathrooms&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None, &#39;deposit&#39;: None, &#39;numberofrooms&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;E2662&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;3500\xa0€&#39;, &#39;surfacearea&#39;: &#39;500\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;11/09/2024 \xa0&#39;, &#39;mu ... (651 characters truncated) ... ne, &#39;images&#39;: None, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A14990&#39;, &#39;price&#39;: &#39;550\xa0€&#39;, &#39;surfacearea&#39;: &#39;64\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;05/09/2024 \xa0&#39;,  ... (648 characters truncated) ... ction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;5 тераси\xa0&#39;, &#39;code&#39;: &#39;C0763&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;2000\xa0€&#39;, &#39;surfacearea&#39;: &#39;250\xa0m²&#39;, &#39;lastmodified ... (693 characters truncated) ... tion&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;C0752&#39;, &#39;basement&#39;: &#39;да\xa0&#39;, &#39;price&#39;: &#39;800\xa0€&#39;, &#39;surfacearea&#39;: &#39;100\xa0m²&#39;, &#39;electricheating&#39;: True, &#39;lastmodifi ... (651 characters truncated) ... n&#39;: None, &#39;kitchenappliances&#39;: None, &#39;newbuilding&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;C0764&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;2000\xa0€&#39;, &#39;surfacearea&#39;: &#39;250\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39; ... (643 characters truncated) ... appliances&#39;: None, &#39;newbuilding&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A14977&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;400\xa0€&#39;, &#39;surfacearea&#39;: &#39;51\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;0 ... (646 characters truncated) ... e, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A13615&#39;, &#39;price&#39;: &#39;900\xa0€&#39;, &#39;surfacearea&#39;: &#39;107\xa0m²&#39;, &#39;electricheating&#39;: True, &#39;lastmodifi ... (650 characters truncated) ... ction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A14960&#39;, &#39;price&#39;: &#39;350\xa0€&#39;, &#39;surfacearea&#39;: &#39;45\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \xa0&#39;,  ... (653 characters truncated) ... ction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A15014&#39;, &#39;price&#39;: &#39;Please contact&#39;, &#39;surfacearea&#39;: &#39;50\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \ ... (634 characters truncated) ... et&#39;: None, &#39;yard&#39;: None, &#39;cabletv&#39;: None, &#39;images&#39;: None, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;deposit&#39;: None}, {&#39;balcony&#39;: &#39;+32м2\xa0&#39;, &#39;code&#39;: &#39;A15013&#39;, &#39;price&#39;: &#39;550\xa0€&#39;, &#39;surfacearea&#39;: &#39;75\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \xa0&#39;, &#39;municipality&#39;: &#39;Цента ... (612 characters truncated) ... t&#39;: None, &#39;yard&#39;: None, &#39;cabletv&#39;: None, &#39;images&#39;: None, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;E2661&#39;, &#39;price&#39;: &#39;250\xa0€&#39;, &#39;surfacearea&#39;: &#39;36\xa0m²&#39;, &#39;electricheating&#39;: True, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \xa0 ... (678 characters truncated) ...  None, &#39;yard&#39;: None, &#39;cabletv&#39;: None, &#39;numberofsleepingroms&#39;: None, &#39;images&#39;: None, &#39;yearofconstruction&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;+40м2\xa0&#39;, &#39;code&#39;: &#39;A15012&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;1300\xa0€&#39;, &#39;surfacearea&#39;: &#39;93\xa0m²&#39;, &#39;lastmodifiedon&#39; ... (648 characters truncated) ... e, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}]]
+ // Werkzeug Debugger</title>
+    <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css">
+    <link rel="shortcut icon"
+        href="?__debugger__=yes&amp;cmd=resource&amp;f=console.png">
+    <script src="?__debugger__=yes&amp;cmd=resource&amp;f=debugger.js"></script>
+    <script>
+      var CONSOLE_MODE = false,
+          EVALEX = false,
+          EVALEX_TRUSTED = false,
+          SECRET = "OlZRJi8ThG2KjGpDKNMF";
+    </script>
+  </head>
+  <body style="background-color: #fff">
+    <div class="debugger">
+<h1>StatementError</h1>
+<div class="detail">
+  <p class="errormsg">sqlalchemy.exc.StatementError: (builtins.TypeError) SQLite Date type only accepts Python date objects as input.
+[SQL: INSERT INTO property (link, code, description, images, lastmodifiedon, municipality, location, surfacearea, numberofrooms, numberofsleepingroms, floornumber, interior, numberofbathrooms, balcony, yard, airconditioning, heating, propertysheet, price, deposit, commission, elevator, newbuilding, shortstay, electricheating, orientation, kitchenappliances, yearofconstruction, renovated, parking, basement, internet, cabletv, students) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id]
+[parameters: [{&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;2 тераси\xa0&#39;, &#39;code&#39;: &#39;E1900&#39;, &#39;price&#39;: &#39;520\xa0€&#39;, &#39;surfacearea&#39;: &#39;106\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;11/09/2024 \ ... (659 characters truncated) ... mages&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;C0446&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;1300\xa0€&#39;, &#39;surfacearea&#39;: &#39;300\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \xa0&#39;, &#39;mu ... (636 characters truncated) ...  None, &#39;yearofconstruction&#39;: None, &#39;numberofbathrooms&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None, &#39;numberofrooms&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;A5587&#39;, &#39;price&#39;: &#39;500\xa0€&#39;, &#39;surfacearea&#39;: &#39;115\xa0m²&#39;, &#39;electricheating&#39;: True, &#39;lastmodifiedon&#39;: &#39;12/09/2024 \xa ... (636 characters truncated) ... nappliances&#39;: None, &#39;newbuilding&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;2 тераси  \xa0&#39;, &#39;code&#39;: &#39;A11568&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;500\xa0€&#39;, &#39;surfacearea&#39;: &#39;86\xa0m²&#39;, &#39;lastmodifie ... (651 characters truncated) ... e, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A12565&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;400\xa0€&#39;, &#39;surfacearea&#39;: &#39;70\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;0 ... (639 characters truncated) ... tion&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;француска\xa0&#39;, &#39;code&#39;: &#39;A11907&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;500\xa0€&#39;, &#39;surfacearea&#39;: &#39;84\xa0m²&#39;, &#39;lastmodified ... (687 characters truncated) ... e, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;C0598&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;1500\xa0€&#39;, &#39;surfacearea&#39;: &#39;270\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39; ... (663 characters truncated) ... appliances&#39;: None, &#39;newbuilding&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;E1840&#39;, &#39;price&#39;: &#39;700\xa0€&#39;, &#39;surfacearea&#39;: &#39;85\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/05/2023 \xa0&#39;, &#39;municipality&#39;: &#39;Цента ... (606 characters truncated) ...  None, &#39;yard&#39;: None, &#39;cabletv&#39;: None, &#39;numberofsleepingroms&#39;: None, &#39;images&#39;: None, &#39;yearofconstruction&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None}, {&#39;code&#39;: &#39;H0240&#39;, &#39;price&#39;: &#39;Please contact&#39;, &#39;surfacearea&#39;: &#39;2399\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;04/10/2023 \xa0&#39;, &#39;municipality&#39;: &#39;Пробиштип\xa0&#39;, &#39;yard&#39; ... (1022 characters truncated) ... , &#39;images&#39;: None, &#39;kitchenappliances&#39;: None, &#39;numberofbathrooms&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None, &#39;deposit&#39;: None, &#39;numberofrooms&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;15m2\xa0&#39;, &#39;code&#39;: &#39;A13520&#39;, &#39;price&#39;: &#39;550\xa0€&#39;, &#39;surfacearea&#39;: &#39;83\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \xa0&#39; ... (657 characters truncated) ...  None, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A14633&#39;, &#39;price&#39;: &#39;600\xa0€&#39;, &#39;surfacearea&#39;: &#39;76\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;12/09/2024 \xa0&#39;,  ... (657 characters truncated) ... ction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;code&#39;: &#39;H0246&#39;, &#39;price&#39;: &#39;Please contact&#39;, &#39;surfacearea&#39;: &#39;800\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;11/09/2024 \xa0&#39;, &#39;municipality&#39;: &#39;Карпош 3\xa0&#39;, &#39;interio ... (598 characters truncated) ... struction&#39;: None, &#39;numberofbathrooms&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None, &#39;deposit&#39;: None, &#39;numberofrooms&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;E2662&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;3500\xa0€&#39;, &#39;surfacearea&#39;: &#39;500\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;11/09/2024 \xa0&#39;, &#39;mu ... (651 characters truncated) ... ne, &#39;images&#39;: None, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A14990&#39;, &#39;price&#39;: &#39;550\xa0€&#39;, &#39;surfacearea&#39;: &#39;64\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;05/09/2024 \xa0&#39;,  ... (648 characters truncated) ... ction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;5 тераси\xa0&#39;, &#39;code&#39;: &#39;C0763&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;2000\xa0€&#39;, &#39;surfacearea&#39;: &#39;250\xa0m²&#39;, &#39;lastmodified ... (693 characters truncated) ... tion&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;C0752&#39;, &#39;basement&#39;: &#39;да\xa0&#39;, &#39;price&#39;: &#39;800\xa0€&#39;, &#39;surfacearea&#39;: &#39;100\xa0m²&#39;, &#39;electricheating&#39;: True, &#39;lastmodifi ... (651 characters truncated) ... n&#39;: None, &#39;kitchenappliances&#39;: None, &#39;newbuilding&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;C0764&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;2000\xa0€&#39;, &#39;surfacearea&#39;: &#39;250\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39; ... (643 characters truncated) ... appliances&#39;: None, &#39;newbuilding&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A14977&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;400\xa0€&#39;, &#39;surfacearea&#39;: &#39;51\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;0 ... (646 characters truncated) ... e, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A13615&#39;, &#39;price&#39;: &#39;900\xa0€&#39;, &#39;surfacearea&#39;: &#39;107\xa0m²&#39;, &#39;electricheating&#39;: True, &#39;lastmodifi ... (650 characters truncated) ... ction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A14960&#39;, &#39;price&#39;: &#39;350\xa0€&#39;, &#39;surfacearea&#39;: &#39;45\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \xa0&#39;,  ... (653 characters truncated) ... ction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A15014&#39;, &#39;price&#39;: &#39;Please contact&#39;, &#39;surfacearea&#39;: &#39;50\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \ ... (634 characters truncated) ... et&#39;: None, &#39;yard&#39;: None, &#39;cabletv&#39;: None, &#39;images&#39;: None, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;deposit&#39;: None}, {&#39;balcony&#39;: &#39;+32м2\xa0&#39;, &#39;code&#39;: &#39;A15013&#39;, &#39;price&#39;: &#39;550\xa0€&#39;, &#39;surfacearea&#39;: &#39;75\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \xa0&#39;, &#39;municipality&#39;: &#39;Цента ... (612 characters truncated) ... t&#39;: None, &#39;yard&#39;: None, &#39;cabletv&#39;: None, &#39;images&#39;: None, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;E2661&#39;, &#39;price&#39;: &#39;250\xa0€&#39;, &#39;surfacearea&#39;: &#39;36\xa0m²&#39;, &#39;electricheating&#39;: True, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \xa0 ... (678 characters truncated) ...  None, &#39;yard&#39;: None, &#39;cabletv&#39;: None, &#39;numberofsleepingroms&#39;: None, &#39;images&#39;: None, &#39;yearofconstruction&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;+40м2\xa0&#39;, &#39;code&#39;: &#39;A15012&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;1300\xa0€&#39;, &#39;surfacearea&#39;: &#39;93\xa0m²&#39;, &#39;lastmodifiedon&#39; ... (648 characters truncated) ... e, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}]]
+</p>
+</div>
+<h2 class="traceback">Traceback <em>(most recent call last)</em></h2>
+<div class="traceback">
+  <h3></h3>
+  <ul><li><div class="frame" id="frame-139899338215824">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py"</cite>,
+      line <em class="line">1815</em>,
+      in <code class="function">_execute_context</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>conn = self._dbapi_connection</pre>
+<pre class="line before"><span class="ws">            </span>if conn is None:</pre>
+<pre class="line before"><span class="ws">                </span>conn = self._revalidate_connection()</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line current"><span class="ws">            </span>context = constructor(</pre>
+<pre class="line after"><span class="ws">                </span>dialect, self, conn, execution_options, *args, **kw</pre>
+<pre class="line after"><span class="ws">            </span>)</pre>
+<pre class="line after"><span class="ws">        </span>except (exc.PendingRollbackError, exc.ResourceClosedError):</pre>
+<pre class="line after"><span class="ws">            </span>raise</pre>
+<pre class="line after"><span class="ws">        </span>except BaseException as e:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338215936">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/default.py"</cite>,
+      line <em class="line">1474</em>,
+      in <code class="function">_init_compiled</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>if compiled.positional:</pre>
+<pre class="line before"><span class="ws">            </span>core_positional_parameters: MutableSequence[Sequence[Any]] = []</pre>
+<pre class="line before"><span class="ws">            </span>assert positiontup is not None</pre>
+<pre class="line before"><span class="ws">            </span>for compiled_params in self.compiled_parameters:</pre>
+<pre class="line current"><span class="ws">                </span>l_param: List[Any] = [</pre>
+<pre class="line after"><span class="ws">                    </span>(</pre>
+<pre class="line after"><span class="ws">                        </span>flattened_processors[key](compiled_params[key])</pre>
+<pre class="line after"><span class="ws">                        </span>if key in flattened_processors</pre>
+<pre class="line after"><span class="ws">                        </span>else compiled_params[key]</pre>
+<pre class="line after"><span class="ws">                    </span>)</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338216048">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/default.py"</cite>,
+      line <em class="line">1476</em>,
+      in <code class="function">&lt;listcomp&gt;</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>core_positional_parameters: MutableSequence[Sequence[Any]] = []</pre>
+<pre class="line before"><span class="ws">            </span>assert positiontup is not None</pre>
+<pre class="line before"><span class="ws">            </span>for compiled_params in self.compiled_parameters:</pre>
+<pre class="line before"><span class="ws">                </span>l_param: List[Any] = [</pre>
+<pre class="line before"><span class="ws">                    </span>(</pre>
+<pre class="line current"><span class="ws">                        </span>flattened_processors[key](compiled_params[key])</pre>
+<pre class="line after"><span class="ws">                        </span>if key in flattened_processors</pre>
+<pre class="line after"><span class="ws">                        </span>else compiled_params[key]</pre>
+<pre class="line after"><span class="ws">                    </span>)</pre>
+<pre class="line after"><span class="ws">                    </span>for key in positiontup</pre>
+<pre class="line after"><span class="ws">                </span>]</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338216160">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/dialects/sqlite/base.py"</cite>,
+      line <em class="line">1142</em>,
+      in <code class="function">process</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">                    </span>&#34;year&#34;: value.year,</pre>
+<pre class="line before"><span class="ws">                    </span>&#34;month&#34;: value.month,</pre>
+<pre class="line before"><span class="ws">                    </span>&#34;day&#34;: value.day,</pre>
+<pre class="line before"><span class="ws">                </span>}</pre>
+<pre class="line before"><span class="ws">            </span>else:</pre>
+<pre class="line current"><span class="ws">                </span>raise TypeError(</pre>
+<pre class="line after"><span class="ws">                    </span>&#34;SQLite Date type only accepts Python &#34;</pre>
+<pre class="line after"><span class="ws">                    </span>&#34;date objects as input.&#34;</pre>
+<pre class="line after"><span class="ws">                </span>)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">        </span>return process</pre></div>
+</div>
+
+<li><div class="exc-divider">The above exception was the direct cause of the following exception:</div>
+<li><div class="frame" id="frame-139899338663408">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/flask/app.py"</cite>,
+      line <em class="line">1498</em>,
+      in <code class="function">__call__</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">    </span>) -&gt; cabc.Iterable[bytes]:</pre>
+<pre class="line before"><span class="ws">        </span>&#34;&#34;&#34;The WSGI server calls the Flask application object as the</pre>
+<pre class="line before"><span class="ws">        </span>WSGI application. This calls :meth:`wsgi_app`, which can be</pre>
+<pre class="line before"><span class="ws">        </span>wrapped to apply middleware.</pre>
+<pre class="line before"><span class="ws">        </span>&#34;&#34;&#34;</pre>
+<pre class="line current"><span class="ws">        </span>return self.wsgi_app(environ, start_response)</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338663520">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/flask/app.py"</cite>,
+      line <em class="line">1476</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line before"><span class="ws">                </span>response = self.full_dispatch_request()</pre>
+<pre class="line before"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line before"><span class="ws">                </span>error = e</pre>
+<pre class="line current"><span class="ws">                </span>response = self.handle_exception(e)</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre>
+<pre class="line after"><span class="ws">                </span>raise</pre>
+<pre class="line after"><span class="ws">            </span>return response(environ, start_response)</pre>
+<pre class="line after"><span class="ws">        </span>finally:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338200000">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/flask/app.py"</cite>,
+      line <em class="line">1473</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>ctx = self.request_context(environ)</pre>
+<pre class="line before"><span class="ws">        </span>error: BaseException | None = None</pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line current"><span class="ws">                </span>response = self.full_dispatch_request()</pre>
+<pre class="line after"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">                </span>error = e</pre>
+<pre class="line after"><span class="ws">                </span>response = self.handle_exception(e)</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338200112">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/flask/app.py"</cite>,
+      line <em class="line">882</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>request_started.send(self, _async_wrapper=self.ensure_sync)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line before"><span class="ws">                </span>rv = self.dispatch_request()</pre>
+<pre class="line before"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line current"><span class="ws">            </span>rv = self.handle_user_exception(e)</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(</pre>
+<pre class="line after"><span class="ws">        </span>self,</pre>
+<pre class="line after"><span class="ws">        </span>rv: ft.ResponseReturnValue | HTTPException,</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338200224">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/flask/app.py"</cite>,
+      line <em class="line">880</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>request_started.send(self, _async_wrapper=self.ensure_sync)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line current"><span class="ws">                </span>rv = self.dispatch_request()</pre>
+<pre class="line after"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">            </span>rv = self.handle_user_exception(e)</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338200336">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/flask/app.py"</cite>,
+      line <em class="line">865</em>,
+      in <code class="function">dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>and req.method == &#34;OPTIONS&#34;</pre>
+<pre class="line before"><span class="ws">        </span>):</pre>
+<pre class="line before"><span class="ws">            </span>return self.make_default_options_response()</pre>
+<pre class="line before"><span class="ws">        </span># otherwise dispatch to the handler for that endpoint</pre>
+<pre class="line before"><span class="ws">        </span>view_args: dict[str, t.Any] = req.view_args  # type: ignore[assignment]</pre>
+<pre class="line current"><span class="ws">        </span>return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def full_dispatch_request(self) -&gt; Response:</pre>
+<pre class="line after"><span class="ws">        </span>&#34;&#34;&#34;Dispatches the request and on top of that performs request</pre>
+<pre class="line after"><span class="ws">        </span>pre and postprocessing as well as HTTP exception catching and</pre>
+<pre class="line after"><span class="ws">        </span>error handling.</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338200448">
+  <h4>File <cite class="filename">"/app/app.py"</cite>,
+      line <em class="line">58</em>,
+      in <code class="function">create_properties</code></h4>
+  <div class="source "><pre class="line before"><span class="ws"></span>def create_properties():</pre>
+<pre class="line before"><span class="ws">    </span>data = request.json  # This should be a list of property objects</pre>
+<pre class="line before"><span class="ws">    </span>for property_data in data:</pre>
+<pre class="line before"><span class="ws">        </span>new_property = Property(**property_data)</pre>
+<pre class="line before"><span class="ws">        </span>db.session.add(new_property)</pre>
+<pre class="line current"><span class="ws">    </span>db.session.commit()</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>return jsonify({</pre>
+<pre class="line after"><span class="ws">        </span>&#34;message&#34;: &#34;All property data saved successfully&#34;,</pre>
+<pre class="line after"><span class="ws">        </span>&#34;saved_count&#34;: len(data)</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338200560">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/scoping.py"</cite>,
+      line <em class="line">597</em>,
+      in <code class="function">commit</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>:ref:`asyncio_orm_avoid_lazyloads`</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>&#34;&#34;&#34;  # noqa: E501</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line current"><span class="ws">        </span>return self._proxied.commit()</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def connection(</pre>
+<pre class="line after"><span class="ws">        </span>self,</pre>
+<pre class="line after"><span class="ws">        </span>bind_arguments: Optional[_BindArguments] = None,</pre>
+<pre class="line after"><span class="ws">        </span>execution_options: Optional[CoreExecuteOptionsParameter] = None,</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338200672">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py"</cite>,
+      line <em class="line">2028</em>,
+      in <code class="function">commit</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>&#34;&#34;&#34;</pre>
+<pre class="line before"><span class="ws">        </span>trans = self._transaction</pre>
+<pre class="line before"><span class="ws">        </span>if trans is None:</pre>
+<pre class="line before"><span class="ws">            </span>trans = self._autobegin_t()</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line current"><span class="ws">        </span>trans.commit(_to_root=True)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def prepare(self) -&gt; None:</pre>
+<pre class="line after"><span class="ws">        </span>&#34;&#34;&#34;Prepare the current transaction in progress for two phase commit.</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">        </span>If no transaction is in progress, this method raises an</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338200784">
+  <h4>File <cite class="filename">"&lt;string&gt;"</cite>,
+      line <em class="line">2</em>,
+      in <code class="function">commit</code></h4>
+  <div class="source "></div>
+</div>
+
+<li><div class="frame" id="frame-139899338200896">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/state_changes.py"</cite>,
+      line <em class="line">139</em>,
+      in <code class="function">_go</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">                    </span>)</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">            </span>self._current_fn = fn</pre>
+<pre class="line before"><span class="ws">            </span>self._next_state = _StateChangeStates.CHANGE_IN_PROGRESS</pre>
+<pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line current"><span class="ws">                </span>ret_value = fn(self, *arg, **kw)</pre>
+<pre class="line after"><span class="ws">            </span>except:</pre>
+<pre class="line after"><span class="ws">                </span>raise</pre>
+<pre class="line after"><span class="ws">            </span>else:</pre>
+<pre class="line after"><span class="ws">                </span>if self._state is expect_state:</pre>
+<pre class="line after"><span class="ws">                    </span>return ret_value</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338201008">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py"</cite>,
+      line <em class="line">1313</em>,
+      in <code class="function">commit</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>SessionTransactionState.CLOSED,</pre>
+<pre class="line before"><span class="ws">    </span>)</pre>
+<pre class="line before"><span class="ws">    </span>def commit(self, _to_root: bool = False) -&gt; None:</pre>
+<pre class="line before"><span class="ws">        </span>if self._state is not SessionTransactionState.PREPARED:</pre>
+<pre class="line before"><span class="ws">            </span>with self._expect_state(SessionTransactionState.PREPARED):</pre>
+<pre class="line current"><span class="ws">                </span>self._prepare_impl()</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">        </span>if self._parent is None or self.nested:</pre>
+<pre class="line after"><span class="ws">            </span>for conn, trans, should_commit, autoclose in set(</pre>
+<pre class="line after"><span class="ws">                </span>self._connections.values()</pre>
+<pre class="line after"><span class="ws">            </span>):</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338201120">
+  <h4>File <cite class="filename">"&lt;string&gt;"</cite>,
+      line <em class="line">2</em>,
+      in <code class="function">_prepare_impl</code></h4>
+  <div class="source "></div>
+</div>
+
+<li><div class="frame" id="frame-139899338201232">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/state_changes.py"</cite>,
+      line <em class="line">139</em>,
+      in <code class="function">_go</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">                    </span>)</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">            </span>self._current_fn = fn</pre>
+<pre class="line before"><span class="ws">            </span>self._next_state = _StateChangeStates.CHANGE_IN_PROGRESS</pre>
+<pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line current"><span class="ws">                </span>ret_value = fn(self, *arg, **kw)</pre>
+<pre class="line after"><span class="ws">            </span>except:</pre>
+<pre class="line after"><span class="ws">                </span>raise</pre>
+<pre class="line after"><span class="ws">            </span>else:</pre>
+<pre class="line after"><span class="ws">                </span>if self._state is expect_state:</pre>
+<pre class="line after"><span class="ws">                    </span>return ret_value</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338201344">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py"</cite>,
+      line <em class="line">1288</em>,
+      in <code class="function">_prepare_impl</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>if not self.session._flushing:</pre>
+<pre class="line before"><span class="ws">            </span>for _flush_guard in range(100):</pre>
+<pre class="line before"><span class="ws">                </span>if self.session._is_clean():</pre>
+<pre class="line before"><span class="ws">                    </span>break</pre>
+<pre class="line current"><span class="ws">                </span>self.session.flush()</pre>
+<pre class="line after"><span class="ws">            </span>else:</pre>
+<pre class="line after"><span class="ws">                </span>raise exc.FlushError(</pre>
+<pre class="line after"><span class="ws">                    </span>&#34;Over 100 subsequent flushes have occurred within &#34;</pre>
+<pre class="line after"><span class="ws">                    </span>&#34;session.commit() - is an after_flush() hook &#34;</pre>
+<pre class="line after"><span class="ws">                    </span>&#34;creating new objects?&#34;</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338201456">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py"</cite>,
+      line <em class="line">4352</em>,
+      in <code class="function">flush</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>if self._is_clean():</pre>
+<pre class="line before"><span class="ws">            </span>return</pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>self._flushing = True</pre>
+<pre class="line current"><span class="ws">            </span>self._flush(objects)</pre>
+<pre class="line after"><span class="ws">        </span>finally:</pre>
+<pre class="line after"><span class="ws">            </span>self._flushing = False</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def _flush_warning(self, method: Any) -&gt; None:</pre>
+<pre class="line after"><span class="ws">        </span>util.warn(</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338201568">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py"</cite>,
+      line <em class="line">4488</em>,
+      in <code class="function">_flush</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">            </span>transaction.commit()</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>except:</pre>
+<pre class="line before"><span class="ws">            </span>with util.safe_reraise():</pre>
+<pre class="line current"><span class="ws">                </span>transaction.rollback(_capture_exception=True)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def bulk_save_objects(</pre>
+<pre class="line after"><span class="ws">        </span>self,</pre>
+<pre class="line after"><span class="ws">        </span>objects: Iterable[object],</pre>
+<pre class="line after"><span class="ws">        </span>return_defaults: bool = False,</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338201680">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py"</cite>,
+      line <em class="line">146</em>,
+      in <code class="function">__exit__</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span># see #2703 for notes</pre>
+<pre class="line before"><span class="ws">        </span>if type_ is None:</pre>
+<pre class="line before"><span class="ws">            </span>exc_type, exc_value, exc_tb = self._exc_info</pre>
+<pre class="line before"><span class="ws">            </span>assert exc_value is not None</pre>
+<pre class="line before"><span class="ws">            </span>self._exc_info = None  # remove potential circular references</pre>
+<pre class="line current"><span class="ws">            </span>raise exc_value.with_traceback(exc_tb)</pre>
+<pre class="line after"><span class="ws">        </span>else:</pre>
+<pre class="line after"><span class="ws">            </span>self._exc_info = None  # remove potential circular references</pre>
+<pre class="line after"><span class="ws">            </span>assert value is not None</pre>
+<pre class="line after"><span class="ws">            </span>raise value.with_traceback(traceback)</pre>
+<pre class="line after"><span class="ws"></span> </pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338201792">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py"</cite>,
+      line <em class="line">4448</em>,
+      in <code class="function">_flush</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>flush_context.transaction = transaction = self._autobegin_t()._begin()</pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>self._warn_on_events = True</pre>
+<pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line current"><span class="ws">                </span>flush_context.execute()</pre>
+<pre class="line after"><span class="ws">            </span>finally:</pre>
+<pre class="line after"><span class="ws">                </span>self._warn_on_events = False</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">            </span>self.dispatch.after_flush(self, flush_context)</pre>
+<pre class="line after"><span class="ws"></span> </pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338201904">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py"</cite>,
+      line <em class="line">466</em>,
+      in <code class="function">execute</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">                </span>while set_:</pre>
+<pre class="line before"><span class="ws">                    </span>n = set_.pop()</pre>
+<pre class="line before"><span class="ws">                    </span>n.execute_aggregate(self, set_)</pre>
+<pre class="line before"><span class="ws">        </span>else:</pre>
+<pre class="line before"><span class="ws">            </span>for rec in topological.sort(self.dependencies, postsort_actions):</pre>
+<pre class="line current"><span class="ws">                </span>rec.execute(self)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_flush_changes(self) -&gt; None:</pre>
+<pre class="line after"><span class="ws">        </span>&#34;&#34;&#34;Mark processed objects as clean / deleted after a successful</pre>
+<pre class="line after"><span class="ws">        </span>flush().</pre>
+<pre class="line after"><span class="ws"></span> </pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338202016">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py"</cite>,
+      line <em class="line">642</em>,
+      in <code class="function">execute</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>self.sort_key = (&#34;SaveUpdateAll&#34;, mapper._sort_key)</pre>
+<pre class="line before"><span class="ws">        </span>assert mapper is mapper.base_mapper</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">    </span>@util.preload_module(&#34;sqlalchemy.orm.persistence&#34;)</pre>
+<pre class="line before"><span class="ws">    </span>def execute(self, uow):</pre>
+<pre class="line current"><span class="ws">        </span>util.preloaded.orm_persistence.save_obj(</pre>
+<pre class="line after"><span class="ws">            </span>self.mapper,</pre>
+<pre class="line after"><span class="ws">            </span>uow.states_for_mapper_hierarchy(self.mapper, False, False),</pre>
+<pre class="line after"><span class="ws">            </span>uow,</pre>
+<pre class="line after"><span class="ws">        </span>)</pre>
+<pre class="line after"><span class="ws"></span> </pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338202128">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py"</cite>,
+      line <em class="line">93</em>,
+      in <code class="function">save_obj</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>mapper,</pre>
+<pre class="line before"><span class="ws">            </span>table,</pre>
+<pre class="line before"><span class="ws">            </span>update,</pre>
+<pre class="line before"><span class="ws">        </span>)</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line current"><span class="ws">        </span>_emit_insert_statements(</pre>
+<pre class="line after"><span class="ws">            </span>base_mapper,</pre>
+<pre class="line after"><span class="ws">            </span>uowtransaction,</pre>
+<pre class="line after"><span class="ws">            </span>mapper,</pre>
+<pre class="line after"><span class="ws">            </span>table,</pre>
+<pre class="line after"><span class="ws">            </span>insert,</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338202240">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py"</cite>,
+      line <em class="line">1143</em>,
+      in <code class="function">_emit_insert_statements</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">                </span>)</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">            </span>if do_executemany:</pre>
+<pre class="line before"><span class="ws">                </span>multiparams = [rec[2] for rec in records]</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line current"><span class="ws">                </span>result = connection.execute(</pre>
+<pre class="line after"><span class="ws">                    </span>statement, multiparams, execution_options=execution_options</pre>
+<pre class="line after"><span class="ws">                </span>)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">                </span>if use_orm_insert_stmt is not None:</pre>
+<pre class="line after"><span class="ws">                    </span>if return_result is None:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338202352">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py"</cite>,
+      line <em class="line">1418</em>,
+      in <code class="function">execute</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>meth = statement._execute_on_connection</pre>
+<pre class="line before"><span class="ws">        </span>except AttributeError as err:</pre>
+<pre class="line before"><span class="ws">            </span>raise exc.ObjectNotExecutableError(statement) from err</pre>
+<pre class="line before"><span class="ws">        </span>else:</pre>
+<pre class="line current"><span class="ws">            </span>return meth(</pre>
+<pre class="line after"><span class="ws">                </span>self,</pre>
+<pre class="line after"><span class="ws">                </span>distilled_parameters,</pre>
+<pre class="line after"><span class="ws">                </span>execution_options or NO_OPTIONS,</pre>
+<pre class="line after"><span class="ws">            </span>)</pre>
+<pre class="line after"><span class="ws"></span> </pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338202464">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/sql/elements.py"</cite>,
+      line <em class="line">515</em>,
+      in <code class="function">_execute_on_connection</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>execution_options: CoreExecuteOptionsParameter,</pre>
+<pre class="line before"><span class="ws">    </span>) -&gt; Result[Any]:</pre>
+<pre class="line before"><span class="ws">        </span>if self.supports_execution:</pre>
+<pre class="line before"><span class="ws">            </span>if TYPE_CHECKING:</pre>
+<pre class="line before"><span class="ws">                </span>assert isinstance(self, Executable)</pre>
+<pre class="line current"><span class="ws">            </span>return connection._execute_clauseelement(</pre>
+<pre class="line after"><span class="ws">                </span>self, distilled_params, execution_options</pre>
+<pre class="line after"><span class="ws">            </span>)</pre>
+<pre class="line after"><span class="ws">        </span>else:</pre>
+<pre class="line after"><span class="ws">            </span>raise exc.ObjectNotExecutableError(self)</pre>
+<pre class="line after"><span class="ws"></span> </pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338202576">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py"</cite>,
+      line <em class="line">1640</em>,
+      in <code class="function">_execute_clauseelement</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>column_keys=keys,</pre>
+<pre class="line before"><span class="ws">            </span>for_executemany=for_executemany,</pre>
+<pre class="line before"><span class="ws">            </span>schema_translate_map=schema_translate_map,</pre>
+<pre class="line before"><span class="ws">            </span>linting=self.dialect.compiler_linting | compiler.WARN_LINTING,</pre>
+<pre class="line before"><span class="ws">        </span>)</pre>
+<pre class="line current"><span class="ws">        </span>ret = self._execute_context(</pre>
+<pre class="line after"><span class="ws">            </span>dialect,</pre>
+<pre class="line after"><span class="ws">            </span>dialect.execution_ctx_cls._init_compiled,</pre>
+<pre class="line after"><span class="ws">            </span>compiled_sql,</pre>
+<pre class="line after"><span class="ws">            </span>distilled_parameters,</pre>
+<pre class="line after"><span class="ws">            </span>execution_options,</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338202688">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py"</cite>,
+      line <em class="line">1821</em>,
+      in <code class="function">_execute_context</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">                </span>dialect, self, conn, execution_options, *args, **kw</pre>
+<pre class="line before"><span class="ws">            </span>)</pre>
+<pre class="line before"><span class="ws">        </span>except (exc.PendingRollbackError, exc.ResourceClosedError):</pre>
+<pre class="line before"><span class="ws">            </span>raise</pre>
+<pre class="line before"><span class="ws">        </span>except BaseException as e:</pre>
+<pre class="line current"><span class="ws">            </span>self._handle_dbapi_exception(</pre>
+<pre class="line after"><span class="ws">                </span>e, str(statement), parameters, None, None</pre>
+<pre class="line after"><span class="ws">            </span>)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">        </span>if (</pre>
+<pre class="line after"><span class="ws">            </span>self._transaction</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338202800">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py"</cite>,
+      line <em class="line">2355</em>,
+      in <code class="function">_handle_dbapi_exception</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">            </span>if newraise:</pre>
+<pre class="line before"><span class="ws">                </span>raise newraise.with_traceback(exc_info[2]) from e</pre>
+<pre class="line before"><span class="ws">            </span>elif should_wrap:</pre>
+<pre class="line before"><span class="ws">                </span>assert sqlalchemy_exception is not None</pre>
+<pre class="line current"><span class="ws">                </span>raise sqlalchemy_exception.with_traceback(exc_info[2]) from e</pre>
+<pre class="line after"><span class="ws">            </span>else:</pre>
+<pre class="line after"><span class="ws">                </span>assert exc_info[1] is not None</pre>
+<pre class="line after"><span class="ws">                </span>raise exc_info[1].with_traceback(exc_info[2])</pre>
+<pre class="line after"><span class="ws">        </span>finally:</pre>
+<pre class="line after"><span class="ws">            </span>del self._reentrant_error</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338203024">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py"</cite>,
+      line <em class="line">1815</em>,
+      in <code class="function">_execute_context</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>conn = self._dbapi_connection</pre>
+<pre class="line before"><span class="ws">            </span>if conn is None:</pre>
+<pre class="line before"><span class="ws">                </span>conn = self._revalidate_connection()</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line current"><span class="ws">            </span>context = constructor(</pre>
+<pre class="line after"><span class="ws">                </span>dialect, self, conn, execution_options, *args, **kw</pre>
+<pre class="line after"><span class="ws">            </span>)</pre>
+<pre class="line after"><span class="ws">        </span>except (exc.PendingRollbackError, exc.ResourceClosedError):</pre>
+<pre class="line after"><span class="ws">            </span>raise</pre>
+<pre class="line after"><span class="ws">        </span>except BaseException as e:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338215488">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/default.py"</cite>,
+      line <em class="line">1474</em>,
+      in <code class="function">_init_compiled</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>if compiled.positional:</pre>
+<pre class="line before"><span class="ws">            </span>core_positional_parameters: MutableSequence[Sequence[Any]] = []</pre>
+<pre class="line before"><span class="ws">            </span>assert positiontup is not None</pre>
+<pre class="line before"><span class="ws">            </span>for compiled_params in self.compiled_parameters:</pre>
+<pre class="line current"><span class="ws">                </span>l_param: List[Any] = [</pre>
+<pre class="line after"><span class="ws">                    </span>(</pre>
+<pre class="line after"><span class="ws">                        </span>flattened_processors[key](compiled_params[key])</pre>
+<pre class="line after"><span class="ws">                        </span>if key in flattened_processors</pre>
+<pre class="line after"><span class="ws">                        </span>else compiled_params[key]</pre>
+<pre class="line after"><span class="ws">                    </span>)</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338215600">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/default.py"</cite>,
+      line <em class="line">1476</em>,
+      in <code class="function">&lt;listcomp&gt;</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>core_positional_parameters: MutableSequence[Sequence[Any]] = []</pre>
+<pre class="line before"><span class="ws">            </span>assert positiontup is not None</pre>
+<pre class="line before"><span class="ws">            </span>for compiled_params in self.compiled_parameters:</pre>
+<pre class="line before"><span class="ws">                </span>l_param: List[Any] = [</pre>
+<pre class="line before"><span class="ws">                    </span>(</pre>
+<pre class="line current"><span class="ws">                        </span>flattened_processors[key](compiled_params[key])</pre>
+<pre class="line after"><span class="ws">                        </span>if key in flattened_processors</pre>
+<pre class="line after"><span class="ws">                        </span>else compiled_params[key]</pre>
+<pre class="line after"><span class="ws">                    </span>)</pre>
+<pre class="line after"><span class="ws">                    </span>for key in positiontup</pre>
+<pre class="line after"><span class="ws">                </span>]</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338215712">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/dialects/sqlite/base.py"</cite>,
+      line <em class="line">1142</em>,
+      in <code class="function">process</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">                    </span>&#34;year&#34;: value.year,</pre>
+<pre class="line before"><span class="ws">                    </span>&#34;month&#34;: value.month,</pre>
+<pre class="line before"><span class="ws">                    </span>&#34;day&#34;: value.day,</pre>
+<pre class="line before"><span class="ws">                </span>}</pre>
+<pre class="line before"><span class="ws">            </span>else:</pre>
+<pre class="line current"><span class="ws">                </span>raise TypeError(</pre>
+<pre class="line after"><span class="ws">                    </span>&#34;SQLite Date type only accepts Python &#34;</pre>
+<pre class="line after"><span class="ws">                    </span>&#34;date objects as input.&#34;</pre>
+<pre class="line after"><span class="ws">                </span>)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">        </span>return process</pre></div>
+</div>
+</ul>
+  <blockquote>sqlalchemy.exc.StatementError: (builtins.TypeError) SQLite Date type only accepts Python date objects as input.
+[SQL: INSERT INTO property (link, code, description, images, lastmodifiedon, municipality, location, surfacearea, numberofrooms, numberofsleepingroms, floornumber, interior, numberofbathrooms, balcony, yard, airconditioning, heating, propertysheet, price, deposit, commission, elevator, newbuilding, shortstay, electricheating, orientation, kitchenappliances, yearofconstruction, renovated, parking, basement, internet, cabletv, students) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id]
+[parameters: [{&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;2 тераси\xa0&#39;, &#39;code&#39;: &#39;E1900&#39;, &#39;price&#39;: &#39;520\xa0€&#39;, &#39;surfacearea&#39;: &#39;106\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;11/09/2024 \ ... (659 characters truncated) ... mages&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;C0446&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;1300\xa0€&#39;, &#39;surfacearea&#39;: &#39;300\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \xa0&#39;, &#39;mu ... (636 characters truncated) ...  None, &#39;yearofconstruction&#39;: None, &#39;numberofbathrooms&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None, &#39;numberofrooms&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;A5587&#39;, &#39;price&#39;: &#39;500\xa0€&#39;, &#39;surfacearea&#39;: &#39;115\xa0m²&#39;, &#39;electricheating&#39;: True, &#39;lastmodifiedon&#39;: &#39;12/09/2024 \xa ... (636 characters truncated) ... nappliances&#39;: None, &#39;newbuilding&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;2 тераси  \xa0&#39;, &#39;code&#39;: &#39;A11568&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;500\xa0€&#39;, &#39;surfacearea&#39;: &#39;86\xa0m²&#39;, &#39;lastmodifie ... (651 characters truncated) ... e, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A12565&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;400\xa0€&#39;, &#39;surfacearea&#39;: &#39;70\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;0 ... (639 characters truncated) ... tion&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;француска\xa0&#39;, &#39;code&#39;: &#39;A11907&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;500\xa0€&#39;, &#39;surfacearea&#39;: &#39;84\xa0m²&#39;, &#39;lastmodified ... (687 characters truncated) ... e, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;C0598&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;1500\xa0€&#39;, &#39;surfacearea&#39;: &#39;270\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39; ... (663 characters truncated) ... appliances&#39;: None, &#39;newbuilding&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;E1840&#39;, &#39;price&#39;: &#39;700\xa0€&#39;, &#39;surfacearea&#39;: &#39;85\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/05/2023 \xa0&#39;, &#39;municipality&#39;: &#39;Цента ... (606 characters truncated) ...  None, &#39;yard&#39;: None, &#39;cabletv&#39;: None, &#39;numberofsleepingroms&#39;: None, &#39;images&#39;: None, &#39;yearofconstruction&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None}, {&#39;code&#39;: &#39;H0240&#39;, &#39;price&#39;: &#39;Please contact&#39;, &#39;surfacearea&#39;: &#39;2399\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;04/10/2023 \xa0&#39;, &#39;municipality&#39;: &#39;Пробиштип\xa0&#39;, &#39;yard&#39; ... (1022 characters truncated) ... , &#39;images&#39;: None, &#39;kitchenappliances&#39;: None, &#39;numberofbathrooms&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None, &#39;deposit&#39;: None, &#39;numberofrooms&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;15m2\xa0&#39;, &#39;code&#39;: &#39;A13520&#39;, &#39;price&#39;: &#39;550\xa0€&#39;, &#39;surfacearea&#39;: &#39;83\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \xa0&#39; ... (657 characters truncated) ...  None, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A14633&#39;, &#39;price&#39;: &#39;600\xa0€&#39;, &#39;surfacearea&#39;: &#39;76\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;12/09/2024 \xa0&#39;,  ... (657 characters truncated) ... ction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;code&#39;: &#39;H0246&#39;, &#39;price&#39;: &#39;Please contact&#39;, &#39;surfacearea&#39;: &#39;800\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;11/09/2024 \xa0&#39;, &#39;municipality&#39;: &#39;Карпош 3\xa0&#39;, &#39;interio ... (598 characters truncated) ... struction&#39;: None, &#39;numberofbathrooms&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None, &#39;deposit&#39;: None, &#39;numberofrooms&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;E2662&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;3500\xa0€&#39;, &#39;surfacearea&#39;: &#39;500\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;11/09/2024 \xa0&#39;, &#39;mu ... (651 characters truncated) ... ne, &#39;images&#39;: None, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A14990&#39;, &#39;price&#39;: &#39;550\xa0€&#39;, &#39;surfacearea&#39;: &#39;64\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;05/09/2024 \xa0&#39;,  ... (648 characters truncated) ... ction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;5 тераси\xa0&#39;, &#39;code&#39;: &#39;C0763&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;2000\xa0€&#39;, &#39;surfacearea&#39;: &#39;250\xa0m²&#39;, &#39;lastmodified ... (693 characters truncated) ... tion&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;C0752&#39;, &#39;basement&#39;: &#39;да\xa0&#39;, &#39;price&#39;: &#39;800\xa0€&#39;, &#39;surfacearea&#39;: &#39;100\xa0m²&#39;, &#39;electricheating&#39;: True, &#39;lastmodifi ... (651 characters truncated) ... n&#39;: None, &#39;kitchenappliances&#39;: None, &#39;newbuilding&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;C0764&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;2000\xa0€&#39;, &#39;surfacearea&#39;: &#39;250\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39; ... (643 characters truncated) ... appliances&#39;: None, &#39;newbuilding&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A14977&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;400\xa0€&#39;, &#39;surfacearea&#39;: &#39;51\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;0 ... (646 characters truncated) ... e, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A13615&#39;, &#39;price&#39;: &#39;900\xa0€&#39;, &#39;surfacearea&#39;: &#39;107\xa0m²&#39;, &#39;electricheating&#39;: True, &#39;lastmodifi ... (650 characters truncated) ... ction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A14960&#39;, &#39;price&#39;: &#39;350\xa0€&#39;, &#39;surfacearea&#39;: &#39;45\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \xa0&#39;,  ... (653 characters truncated) ... ction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A15014&#39;, &#39;price&#39;: &#39;Please contact&#39;, &#39;surfacearea&#39;: &#39;50\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \ ... (634 characters truncated) ... et&#39;: None, &#39;yard&#39;: None, &#39;cabletv&#39;: None, &#39;images&#39;: None, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;deposit&#39;: None}, {&#39;balcony&#39;: &#39;+32м2\xa0&#39;, &#39;code&#39;: &#39;A15013&#39;, &#39;price&#39;: &#39;550\xa0€&#39;, &#39;surfacearea&#39;: &#39;75\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \xa0&#39;, &#39;municipality&#39;: &#39;Цента ... (612 characters truncated) ... t&#39;: None, &#39;yard&#39;: None, &#39;cabletv&#39;: None, &#39;images&#39;: None, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;E2661&#39;, &#39;price&#39;: &#39;250\xa0€&#39;, &#39;surfacearea&#39;: &#39;36\xa0m²&#39;, &#39;electricheating&#39;: True, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \xa0 ... (678 characters truncated) ...  None, &#39;yard&#39;: None, &#39;cabletv&#39;: None, &#39;numberofsleepingroms&#39;: None, &#39;images&#39;: None, &#39;yearofconstruction&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;+40м2\xa0&#39;, &#39;code&#39;: &#39;A15012&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;1300\xa0€&#39;, &#39;surfacearea&#39;: &#39;93\xa0m²&#39;, &#39;lastmodifiedon&#39; ... (648 characters truncated) ... e, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}]]
+</blockquote>
+</div>
+
+<div class="plain">
+    <p>
+      This is the Copy/Paste friendly version of the traceback.
+    </p>
+    <textarea cols="50" rows="10" name="code" readonly>Traceback (most recent call last):
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py&#34;, line 1815, in _execute_context
+    context = constructor(
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/default.py&#34;, line 1474, in _init_compiled
+    l_param: List[Any] = [
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/default.py&#34;, line 1476, in &lt;listcomp&gt;
+    flattened_processors[key](compiled_params[key])
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/dialects/sqlite/base.py&#34;, line 1142, in process
+    raise TypeError(
+TypeError: SQLite Date type only accepts Python date objects as input.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File &#34;/usr/local/lib/python3.9/site-packages/flask/app.py&#34;, line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File &#34;/usr/local/lib/python3.9/site-packages/flask/app.py&#34;, line 1476, in wsgi_app
+    response = self.handle_exception(e)
+  File &#34;/usr/local/lib/python3.9/site-packages/flask/app.py&#34;, line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File &#34;/usr/local/lib/python3.9/site-packages/flask/app.py&#34;, line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File &#34;/usr/local/lib/python3.9/site-packages/flask/app.py&#34;, line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File &#34;/usr/local/lib/python3.9/site-packages/flask/app.py&#34;, line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File &#34;/app/app.py&#34;, line 58, in create_properties
+    db.session.commit()
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/scoping.py&#34;, line 597, in commit
+    return self._proxied.commit()
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py&#34;, line 2028, in commit
+    trans.commit(_to_root=True)
+  File &#34;&lt;string&gt;&#34;, line 2, in commit
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/state_changes.py&#34;, line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py&#34;, line 1313, in commit
+    self._prepare_impl()
+  File &#34;&lt;string&gt;&#34;, line 2, in _prepare_impl
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/state_changes.py&#34;, line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py&#34;, line 1288, in _prepare_impl
+    self.session.flush()
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py&#34;, line 4352, in flush
+    self._flush(objects)
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py&#34;, line 4488, in _flush
+    transaction.rollback(_capture_exception=True)
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py&#34;, line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py&#34;, line 4448, in _flush
+    flush_context.execute()
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py&#34;, line 466, in execute
+    rec.execute(self)
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py&#34;, line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py&#34;, line 93, in save_obj
+    _emit_insert_statements(
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py&#34;, line 1143, in _emit_insert_statements
+    result = connection.execute(
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py&#34;, line 1418, in execute
+    return meth(
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/sql/elements.py&#34;, line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py&#34;, line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py&#34;, line 1821, in _execute_context
+    self._handle_dbapi_exception(
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py&#34;, line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py&#34;, line 1815, in _execute_context
+    context = constructor(
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/default.py&#34;, line 1474, in _init_compiled
+    l_param: List[Any] = [
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/default.py&#34;, line 1476, in &lt;listcomp&gt;
+    flattened_processors[key](compiled_params[key])
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/dialects/sqlite/base.py&#34;, line 1142, in process
+    raise TypeError(
+sqlalchemy.exc.StatementError: (builtins.TypeError) SQLite Date type only accepts Python date objects as input.
+[SQL: INSERT INTO property (link, code, description, images, lastmodifiedon, municipality, location, surfacearea, numberofrooms, numberofsleepingroms, floornumber, interior, numberofbathrooms, balcony, yard, airconditioning, heating, propertysheet, price, deposit, commission, elevator, newbuilding, shortstay, electricheating, orientation, kitchenappliances, yearofconstruction, renovated, parking, basement, internet, cabletv, students) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id]
+[parameters: [{&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;2 тераси\xa0&#39;, &#39;code&#39;: &#39;E1900&#39;, &#39;price&#39;: &#39;520\xa0€&#39;, &#39;surfacearea&#39;: &#39;106\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;11/09/2024 \ ... (659 characters truncated) ... mages&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;C0446&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;1300\xa0€&#39;, &#39;surfacearea&#39;: &#39;300\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \xa0&#39;, &#39;mu ... (636 characters truncated) ...  None, &#39;yearofconstruction&#39;: None, &#39;numberofbathrooms&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None, &#39;numberofrooms&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;A5587&#39;, &#39;price&#39;: &#39;500\xa0€&#39;, &#39;surfacearea&#39;: &#39;115\xa0m²&#39;, &#39;electricheating&#39;: True, &#39;lastmodifiedon&#39;: &#39;12/09/2024 \xa ... (636 characters truncated) ... nappliances&#39;: None, &#39;newbuilding&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;2 тераси  \xa0&#39;, &#39;code&#39;: &#39;A11568&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;500\xa0€&#39;, &#39;surfacearea&#39;: &#39;86\xa0m²&#39;, &#39;lastmodifie ... (651 characters truncated) ... e, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A12565&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;400\xa0€&#39;, &#39;surfacearea&#39;: &#39;70\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;0 ... (639 characters truncated) ... tion&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;француска\xa0&#39;, &#39;code&#39;: &#39;A11907&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;500\xa0€&#39;, &#39;surfacearea&#39;: &#39;84\xa0m²&#39;, &#39;lastmodified ... (687 characters truncated) ... e, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;C0598&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;1500\xa0€&#39;, &#39;surfacearea&#39;: &#39;270\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39; ... (663 characters truncated) ... appliances&#39;: None, &#39;newbuilding&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;E1840&#39;, &#39;price&#39;: &#39;700\xa0€&#39;, &#39;surfacearea&#39;: &#39;85\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/05/2023 \xa0&#39;, &#39;municipality&#39;: &#39;Цента ... (606 characters truncated) ...  None, &#39;yard&#39;: None, &#39;cabletv&#39;: None, &#39;numberofsleepingroms&#39;: None, &#39;images&#39;: None, &#39;yearofconstruction&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None}, {&#39;code&#39;: &#39;H0240&#39;, &#39;price&#39;: &#39;Please contact&#39;, &#39;surfacearea&#39;: &#39;2399\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;04/10/2023 \xa0&#39;, &#39;municipality&#39;: &#39;Пробиштип\xa0&#39;, &#39;yard&#39; ... (1022 characters truncated) ... , &#39;images&#39;: None, &#39;kitchenappliances&#39;: None, &#39;numberofbathrooms&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None, &#39;deposit&#39;: None, &#39;numberofrooms&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;15m2\xa0&#39;, &#39;code&#39;: &#39;A13520&#39;, &#39;price&#39;: &#39;550\xa0€&#39;, &#39;surfacearea&#39;: &#39;83\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \xa0&#39; ... (657 characters truncated) ...  None, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A14633&#39;, &#39;price&#39;: &#39;600\xa0€&#39;, &#39;surfacearea&#39;: &#39;76\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;12/09/2024 \xa0&#39;,  ... (657 characters truncated) ... ction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;code&#39;: &#39;H0246&#39;, &#39;price&#39;: &#39;Please contact&#39;, &#39;surfacearea&#39;: &#39;800\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;11/09/2024 \xa0&#39;, &#39;municipality&#39;: &#39;Карпош 3\xa0&#39;, &#39;interio ... (598 characters truncated) ... struction&#39;: None, &#39;numberofbathrooms&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None, &#39;deposit&#39;: None, &#39;numberofrooms&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;E2662&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;3500\xa0€&#39;, &#39;surfacearea&#39;: &#39;500\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;11/09/2024 \xa0&#39;, &#39;mu ... (651 characters truncated) ... ne, &#39;images&#39;: None, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A14990&#39;, &#39;price&#39;: &#39;550\xa0€&#39;, &#39;surfacearea&#39;: &#39;64\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;05/09/2024 \xa0&#39;,  ... (648 characters truncated) ... ction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;5 тераси\xa0&#39;, &#39;code&#39;: &#39;C0763&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;2000\xa0€&#39;, &#39;surfacearea&#39;: &#39;250\xa0m²&#39;, &#39;lastmodified ... (693 characters truncated) ... tion&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;C0752&#39;, &#39;basement&#39;: &#39;да\xa0&#39;, &#39;price&#39;: &#39;800\xa0€&#39;, &#39;surfacearea&#39;: &#39;100\xa0m²&#39;, &#39;electricheating&#39;: True, &#39;lastmodifi ... (651 characters truncated) ... n&#39;: None, &#39;kitchenappliances&#39;: None, &#39;newbuilding&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;C0764&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;2000\xa0€&#39;, &#39;surfacearea&#39;: &#39;250\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39; ... (643 characters truncated) ... appliances&#39;: None, &#39;newbuilding&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;elevator&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A14977&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;400\xa0€&#39;, &#39;surfacearea&#39;: &#39;51\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;0 ... (646 characters truncated) ... e, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A13615&#39;, &#39;price&#39;: &#39;900\xa0€&#39;, &#39;surfacearea&#39;: &#39;107\xa0m²&#39;, &#39;electricheating&#39;: True, &#39;lastmodifi ... (650 characters truncated) ... ction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A14960&#39;, &#39;price&#39;: &#39;350\xa0€&#39;, &#39;surfacearea&#39;: &#39;45\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \xa0&#39;,  ... (653 characters truncated) ... ction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;heating&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;да\xa0&#39;, &#39;code&#39;: &#39;A15014&#39;, &#39;price&#39;: &#39;Please contact&#39;, &#39;surfacearea&#39;: &#39;50\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \ ... (634 characters truncated) ... et&#39;: None, &#39;yard&#39;: None, &#39;cabletv&#39;: None, &#39;images&#39;: None, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;deposit&#39;: None}, {&#39;balcony&#39;: &#39;+32м2\xa0&#39;, &#39;code&#39;: &#39;A15013&#39;, &#39;price&#39;: &#39;550\xa0€&#39;, &#39;surfacearea&#39;: &#39;75\xa0m²&#39;, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \xa0&#39;, &#39;municipality&#39;: &#39;Цента ... (612 characters truncated) ... t&#39;: None, &#39;yard&#39;: None, &#39;cabletv&#39;: None, &#39;images&#39;: None, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None}, {&#39;airconditioning&#39;: True, &#39;code&#39;: &#39;E2661&#39;, &#39;price&#39;: &#39;250\xa0€&#39;, &#39;surfacearea&#39;: &#39;36\xa0m²&#39;, &#39;electricheating&#39;: True, &#39;lastmodifiedon&#39;: &#39;16/09/2024 \xa0 ... (678 characters truncated) ...  None, &#39;yard&#39;: None, &#39;cabletv&#39;: None, &#39;numberofsleepingroms&#39;: None, &#39;images&#39;: None, &#39;yearofconstruction&#39;: None, &#39;orientation&#39;: None, &#39;elevator&#39;: None}, {&#39;airconditioning&#39;: True, &#39;balcony&#39;: &#39;+40м2\xa0&#39;, &#39;code&#39;: &#39;A15012&#39;, &#39;heating&#39;: True, &#39;price&#39;: &#39;1300\xa0€&#39;, &#39;surfacearea&#39;: &#39;93\xa0m²&#39;, &#39;lastmodifiedon&#39; ... (648 characters truncated) ... e, &#39;yearofconstruction&#39;: None, &#39;kitchenappliances&#39;: None, &#39;orientation&#39;: None, &#39;basement&#39;: None, &#39;parking&#39;: None, &#39;internet&#39;: None, &#39;renovated&#39;: None}]]
+</textarea>
+</div>
+<div class="explanation">
+  The debugger caught an exception in your WSGI application.  You can now
+  look at the traceback which led to the error.  <span class="nojavascript">
+  If you enable JavaScript you can also use additional features such as code
+  execution (if the evalex feature is enabled), automatic pasting of the
+  exceptions and much more.</span>
+</div>
+      <div class="footer">
+        Brought to you by <strong class="arthur">DON'T PANIC</strong>, your
+        friendly Werkzeug powered traceback interpreter.
+      </div>
+    </div>
+
+    <div class="pin-prompt">
+      <div class="inner">
+        <h3>Console Locked</h3>
+        <p>
+          The console is locked and needs to be unlocked by entering the PIN.
+          You can find the PIN printed out on the standard output of your
+          shell that runs the server.
+        <form>
+          <p>PIN:
+            <input type=text name=pin size=14>
+            <input type=submit name=btn value="Confirm Pin">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1815, in _execute_context
+    context = constructor(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 1474, in _init_compiled
+    l_param: List[Any] = [
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 1476, in <listcomp>
+    flattened_processors[key](compiled_params[key])
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/dialects/sqlite/base.py", line 1142, in process
+    raise TypeError(
+TypeError: SQLite Date type only accepts Python date objects as input.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1476, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/app.py", line 58, in create_properties
+    db.session.commit()
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/scoping.py", line 597, in commit
+    return self._proxied.commit()
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 2028, in commit
+    trans.commit(_to_root=True)
+  File "<string>", line 2, in commit
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1313, in commit
+    self._prepare_impl()
+  File "<string>", line 2, in _prepare_impl
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/state_changes.py", line 139, in _go
+    ret_value = fn(self, *arg, **kw)
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1288, in _prepare_impl
+    self.session.flush()
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 4352, in flush
+    self._flush(objects)
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 4488, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 4448, in _flush
+    flush_context.execute()
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 466, in execute
+    rec.execute(self)
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/unitofwork.py", line 642, in execute
+    util.preloaded.orm_persistence.save_obj(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 93, in save_obj
+    _emit_insert_statements(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/persistence.py", line 1143, in _emit_insert_statements
+    result = connection.execute(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1418, in execute
+    return meth(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/sql/elements.py", line 515, in _execute_on_connection
+    return connection._execute_clauseelement(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1640, in _execute_clauseelement
+    ret = self._execute_context(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1821, in _execute_context
+    self._handle_dbapi_exception(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 2355, in _handle_dbapi_exception
+    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/base.py", line 1815, in _execute_context
+    context = constructor(
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 1474, in _init_compiled
+    l_param: List[Any] = [
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/engine/default.py", line 1476, in <listcomp>
+    flattened_processors[key](compiled_params[key])
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/dialects/sqlite/base.py", line 1142, in process
+    raise TypeError(
+sqlalchemy.exc.StatementError: (builtins.TypeError) SQLite Date type only accepts Python date objects as input.
+[SQL: INSERT INTO property (link, code, description, images, lastmodifiedon, municipality, location, surfacearea, numberofrooms, numberofsleepingroms, floornumber, interior, numberofbathrooms, balcony, yard, airconditioning, heating, propertysheet, price, deposit, commission, elevator, newbuilding, shortstay, electricheating, orientation, kitchenappliances, yearofconstruction, renovated, parking, basement, internet, cabletv, students) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING id]
+[parameters: [{'airconditioning': True, 'balcony': '2 тераси\xa0', 'code': 'E1900', 'price': '520\xa0€', 'surfacearea': '106\xa0m²', 'lastmodifiedon': '11/09/2024 \ ... (659 characters truncated) ... mages': None, 'kitchenappliances': None, 'orientation': None, 'basement': None, 'heating': None, 'parking': None, 'internet': None, 'renovated': None}, {'airconditioning': True, 'code': 'C0446', 'heating': True, 'price': '1300\xa0€', 'surfacearea': '300\xa0m²', 'lastmodifiedon': '16/09/2024 \xa0', 'mu ... (636 characters truncated) ...  None, 'yearofconstruction': None, 'numberofbathrooms': None, 'kitchenappliances': None, 'orientation': None, 'elevator': None, 'numberofrooms': None}, {'airconditioning': True, 'code': 'A5587', 'price': '500\xa0€', 'surfacearea': '115\xa0m²', 'electricheating': True, 'lastmodifiedon': '12/09/2024 \xa ... (636 characters truncated) ... nappliances': None, 'newbuilding': None, 'orientation': None, 'basement': None, 'heating': None, 'parking': None, 'internet': None, 'renovated': None}, {'airconditioning': True, 'balcony': '2 тераси  \xa0', 'code': 'A11568', 'heating': True, 'price': '500\xa0€', 'surfacearea': '86\xa0m²', 'lastmodifie ... (651 characters truncated) ... e, 'yearofconstruction': None, 'kitchenappliances': None, 'orientation': None, 'basement': None, 'parking': None, 'internet': None, 'renovated': None}, {'airconditioning': True, 'balcony': 'да\xa0', 'code': 'A12565', 'heating': True, 'price': '400\xa0€', 'surfacearea': '70\xa0m²', 'lastmodifiedon': '0 ... (639 characters truncated) ... tion': None, 'kitchenappliances': None, 'orientation': None, 'basement': None, 'elevator': None, 'parking': None, 'internet': None, 'renovated': None}, {'airconditioning': True, 'balcony': 'француска\xa0', 'code': 'A11907', 'heating': True, 'price': '500\xa0€', 'surfacearea': '84\xa0m²', 'lastmodified ... (687 characters truncated) ... e, 'yearofconstruction': None, 'kitchenappliances': None, 'orientation': None, 'basement': None, 'elevator': None, 'parking': None, 'renovated': None}, {'airconditioning': True, 'balcony': 'да\xa0', 'code': 'C0598', 'heating': True, 'price': '1500\xa0€', 'surfacearea': '270\xa0m²', 'lastmodifiedon': ' ... (663 characters truncated) ... appliances': None, 'newbuilding': None, 'orientation': None, 'basement': None, 'elevator': None, 'parking': None, 'internet': None, 'renovated': None}, {'airconditioning': True, 'code': 'E1840', 'price': '700\xa0€', 'surfacearea': '85\xa0m²', 'lastmodifiedon': '16/05/2023 \xa0', 'municipality': 'Цента ... (606 characters truncated) ...  None, 'yard': None, 'cabletv': None, 'numberofsleepingroms': None, 'images': None, 'yearofconstruction': None, 'orientation': None, 'elevator': None}, {'code': 'H0240', 'price': 'Please contact', 'surfacearea': '2399\xa0m²', 'lastmodifiedon': '04/10/2023 \xa0', 'municipality': 'Пробиштип\xa0', 'yard' ... (1022 characters truncated) ... , 'images': None, 'kitchenappliances': None, 'numberofbathrooms': None, 'orientation': None, 'elevator': None, 'deposit': None, 'numberofrooms': None}, {'airconditioning': True, 'balcony': '15m2\xa0', 'code': 'A13520', 'price': '550\xa0€', 'surfacearea': '83\xa0m²', 'lastmodifiedon': '16/09/2024 \xa0' ... (657 characters truncated) ...  None, 'yearofconstruction': None, 'kitchenappliances': None, 'basement': None, 'heating': None, 'parking': None, 'internet': None, 'renovated': None}, {'airconditioning': True, 'balcony': 'да\xa0', 'code': 'A14633', 'price': '600\xa0€', 'surfacearea': '76\xa0m²', 'lastmodifiedon': '12/09/2024 \xa0',  ... (657 characters truncated) ... ction': None, 'kitchenappliances': None, 'orientation': None, 'basement': None, 'heating': None, 'parking': None, 'internet': None, 'renovated': None}, {'code': 'H0246', 'price': 'Please contact', 'surfacearea': '800\xa0m²', 'lastmodifiedon': '11/09/2024 \xa0', 'municipality': 'Карпош 3\xa0', 'interio ... (598 characters truncated) ... struction': None, 'numberofbathrooms': None, 'kitchenappliances': None, 'orientation': None, 'elevator': None, 'deposit': None, 'numberofrooms': None}, {'airconditioning': True, 'code': 'E2662', 'heating': True, 'price': '3500\xa0€', 'surfacearea': '500\xa0m²', 'lastmodifiedon': '11/09/2024 \xa0', 'mu ... (651 characters truncated) ... ne, 'images': None, 'yearofconstruction': None, 'kitchenappliances': None, 'orientation': None, 'basement': None, 'internet': None, 'renovated': None}, {'airconditioning': True, 'balcony': 'да\xa0', 'code': 'A14990', 'price': '550\xa0€', 'surfacearea': '64\xa0m²', 'lastmodifiedon': '05/09/2024 \xa0',  ... (648 characters truncated) ... ction': None, 'kitchenappliances': None, 'orientation': None, 'basement': None, 'heating': None, 'parking': None, 'internet': None, 'renovated': None}, {'airconditioning': True, 'balcony': '5 тераси\xa0', 'code': 'C0763', 'heating': True, 'price': '2000\xa0€', 'surfacearea': '250\xa0m²', 'lastmodified ... (693 characters truncated) ... tion': None, 'kitchenappliances': None, 'orientation': None, 'basement': None, 'elevator': None, 'parking': None, 'internet': None, 'renovated': None}, {'airconditioning': True, 'code': 'C0752', 'basement': 'да\xa0', 'price': '800\xa0€', 'surfacearea': '100\xa0m²', 'electricheating': True, 'lastmodifi ... (651 characters truncated) ... n': None, 'kitchenappliances': None, 'newbuilding': None, 'orientation': None, 'elevator': None, 'parking': None, 'internet': None, 'renovated': None}, {'airconditioning': True, 'balcony': 'да\xa0', 'code': 'C0764', 'heating': True, 'price': '2000\xa0€', 'surfacearea': '250\xa0m²', 'lastmodifiedon': ' ... (643 characters truncated) ... appliances': None, 'newbuilding': None, 'orientation': None, 'basement': None, 'elevator': None, 'parking': None, 'internet': None, 'renovated': None}, {'airconditioning': True, 'balcony': 'да\xa0', 'code': 'A14977', 'heating': True, 'price': '400\xa0€', 'surfacearea': '51\xa0m²', 'lastmodifiedon': '0 ... (646 characters truncated) ... e, 'yearofconstruction': None, 'kitchenappliances': None, 'orientation': None, 'basement': None, 'parking': None, 'internet': None, 'renovated': None}, {'airconditioning': True, 'balcony': 'да\xa0', 'code': 'A13615', 'price': '900\xa0€', 'surfacearea': '107\xa0m²', 'electricheating': True, 'lastmodifi ... (650 characters truncated) ... ction': None, 'kitchenappliances': None, 'orientation': None, 'basement': None, 'heating': None, 'parking': None, 'internet': None, 'renovated': None}, {'airconditioning': True, 'balcony': 'да\xa0', 'code': 'A14960', 'price': '350\xa0€', 'surfacearea': '45\xa0m²', 'lastmodifiedon': '16/09/2024 \xa0',  ... (653 characters truncated) ... ction': None, 'kitchenappliances': None, 'orientation': None, 'basement': None, 'heating': None, 'parking': None, 'internet': None, 'renovated': None}, {'airconditioning': True, 'balcony': 'да\xa0', 'code': 'A15014', 'price': 'Please contact', 'surfacearea': '50\xa0m²', 'lastmodifiedon': '16/09/2024 \ ... (634 characters truncated) ... et': None, 'yard': None, 'cabletv': None, 'images': None, 'yearofconstruction': None, 'kitchenappliances': None, 'orientation': None, 'deposit': None}, {'balcony': '+32м2\xa0', 'code': 'A15013', 'price': '550\xa0€', 'surfacearea': '75\xa0m²', 'lastmodifiedon': '16/09/2024 \xa0', 'municipality': 'Цента ... (612 characters truncated) ... t': None, 'yard': None, 'cabletv': None, 'images': None, 'yearofconstruction': None, 'kitchenappliances': None, 'orientation': None, 'elevator': None}, {'airconditioning': True, 'code': 'E2661', 'price': '250\xa0€', 'surfacearea': '36\xa0m²', 'electricheating': True, 'lastmodifiedon': '16/09/2024 \xa0 ... (678 characters truncated) ...  None, 'yard': None, 'cabletv': None, 'numberofsleepingroms': None, 'images': None, 'yearofconstruction': None, 'orientation': None, 'elevator': None}, {'airconditioning': True, 'balcony': '+40м2\xa0', 'code': 'A15012', 'heating': True, 'price': '1300\xa0€', 'surfacearea': '93\xa0m²', 'lastmodifiedon' ... (648 characters truncated) ... e, 'yearofconstruction': None, 'kitchenappliances': None, 'orientation': None, 'basement': None, 'parking': None, 'internet': None, 'renovated': None}]]
+
+
+-->
+[2024-09-17T08:14:41.813+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-17T08:14:41.826+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-17T08:14:41.827+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=real_estate_pipeline, task_id=push_novel, run_id=manual__2024-09-17T08:13:18.194706+00:00, execution_date=20240917T081318, start_date=20240917T081441, end_date=20240917T081441
+[2024-09-17T08:14:41.903+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-17T08:14:41.928+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-17T08:14:41.933+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  sleek-airflow:
+    build:
+      context: .
+      dockerfile: Dockerfile.airflow 
+    volumes:
+      - ./airflow:/opt/airflow
+    ports:
+      - "8080:8080"
+    command: airflow standalone
+    networks:
+      - app-network
+
+  flask-api:
+    build:
+      context: .
+      dockerfile: Dockerfile.flask 
+    ports:
+      - "5000:5000"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

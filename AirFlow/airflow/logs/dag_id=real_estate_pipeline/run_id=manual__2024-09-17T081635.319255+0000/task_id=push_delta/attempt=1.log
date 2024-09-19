@@ -1,0 +1,328 @@
+[2024-09-17T08:18:12.455+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-17T08:18:12.481+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: real_estate_pipeline.push_delta manual__2024-09-17T08:16:35.319255+00:00 [queued]>
+[2024-09-17T08:18:12.497+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: real_estate_pipeline.push_delta manual__2024-09-17T08:16:35.319255+00:00 [queued]>
+[2024-09-17T08:18:12.500+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-09-17T08:18:12.547+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): push_delta> on 2024-09-17 08:16:35.319255+00:00
+[2024-09-17T08:18:12.556+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'real_estate_pipeline', 'push_delta', 'manual__2024-09-17T08:16:35.319255+00:00', '--job-id', '115', '--raw', '--subdir', 'DAGS_FOLDER/real_estate_dag.py', '--cfg-path', '/tmp/tmpu1a6uasm']
+[2024-09-17T08:18:12.561+0000] {standard_task_runner.py:105} INFO - Job 115: Subtask push_delta
+[2024-09-17T08:18:12.573+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=633) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-17T08:18:12.574+0000] {standard_task_runner.py:72} INFO - Started process 650 to run task
+[2024-09-17T08:18:12.651+0000] {task_command.py:467} INFO - Running <TaskInstance: real_estate_pipeline.push_delta manual__2024-09-17T08:16:35.319255+00:00 [running]> on host 1083859d72d8
+[2024-09-17T08:18:12.840+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='real_estate_pipeline' AIRFLOW_CTX_TASK_ID='push_delta' AIRFLOW_CTX_EXECUTION_DATE='2024-09-17T08:16:35.319255+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-17T08:16:35.319255+00:00'
+[2024-09-17T08:18:12.841+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-17T08:18:12.894+0000] {logging_mixin.py:190} INFO - Failed to send data. Status Code: 500, Response: <!doctype html>
+<html lang=en>
+  <head>
+    <title>TypeError: &#39;typeobject&#39; is an invalid keyword argument for Property
+ // Werkzeug Debugger</title>
+    <link rel="stylesheet" href="?__debugger__=yes&amp;cmd=resource&amp;f=style.css">
+    <link rel="shortcut icon"
+        href="?__debugger__=yes&amp;cmd=resource&amp;f=console.png">
+    <script src="?__debugger__=yes&amp;cmd=resource&amp;f=debugger.js"></script>
+    <script>
+      var CONSOLE_MODE = false,
+          EVALEX = false,
+          EVALEX_TRUSTED = false,
+          SECRET = "OlZRJi8ThG2KjGpDKNMF";
+    </script>
+  </head>
+  <body style="background-color: #fff">
+    <div class="debugger">
+<h1>TypeError</h1>
+<div class="detail">
+  <p class="errormsg">TypeError: &#39;typeobject&#39; is an invalid keyword argument for Property
+</p>
+</div>
+<h2 class="traceback">Traceback <em>(most recent call last)</em></h2>
+<div class="traceback">
+  <h3></h3>
+  <ul><li><div class="frame" id="frame-139899338091760">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/flask/app.py"</cite>,
+      line <em class="line">1498</em>,
+      in <code class="function">__call__</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">    </span>) -&gt; cabc.Iterable[bytes]:</pre>
+<pre class="line before"><span class="ws">        </span>&#34;&#34;&#34;The WSGI server calls the Flask application object as the</pre>
+<pre class="line before"><span class="ws">        </span>WSGI application. This calls :meth:`wsgi_app`, which can be</pre>
+<pre class="line before"><span class="ws">        </span>wrapped to apply middleware.</pre>
+<pre class="line before"><span class="ws">        </span>&#34;&#34;&#34;</pre>
+<pre class="line current"><span class="ws">        </span>return self.wsgi_app(environ, start_response)</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338091872">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/flask/app.py"</cite>,
+      line <em class="line">1476</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line before"><span class="ws">                </span>response = self.full_dispatch_request()</pre>
+<pre class="line before"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line before"><span class="ws">                </span>error = e</pre>
+<pre class="line current"><span class="ws">                </span>response = self.handle_exception(e)</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre>
+<pre class="line after"><span class="ws">                </span>raise</pre>
+<pre class="line after"><span class="ws">            </span>return response(environ, start_response)</pre>
+<pre class="line after"><span class="ws">        </span>finally:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338091984">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/flask/app.py"</cite>,
+      line <em class="line">1473</em>,
+      in <code class="function">wsgi_app</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>ctx = self.request_context(environ)</pre>
+<pre class="line before"><span class="ws">        </span>error: BaseException | None = None</pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>try:</pre>
+<pre class="line before"><span class="ws">                </span>ctx.push()</pre>
+<pre class="line current"><span class="ws">                </span>response = self.full_dispatch_request()</pre>
+<pre class="line after"><span class="ws">            </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">                </span>error = e</pre>
+<pre class="line after"><span class="ws">                </span>response = self.handle_exception(e)</pre>
+<pre class="line after"><span class="ws">            </span>except:  # noqa: B001</pre>
+<pre class="line after"><span class="ws">                </span>error = sys.exc_info()[1]</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338092096">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/flask/app.py"</cite>,
+      line <em class="line">882</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>request_started.send(self, _async_wrapper=self.ensure_sync)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line before"><span class="ws">                </span>rv = self.dispatch_request()</pre>
+<pre class="line before"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line current"><span class="ws">            </span>rv = self.handle_user_exception(e)</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(</pre>
+<pre class="line after"><span class="ws">        </span>self,</pre>
+<pre class="line after"><span class="ws">        </span>rv: ft.ResponseReturnValue | HTTPException,</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338092208">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/flask/app.py"</cite>,
+      line <em class="line">880</em>,
+      in <code class="function">full_dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>request_started.send(self, _async_wrapper=self.ensure_sync)</pre>
+<pre class="line before"><span class="ws">            </span>rv = self.preprocess_request()</pre>
+<pre class="line before"><span class="ws">            </span>if rv is None:</pre>
+<pre class="line current"><span class="ws">                </span>rv = self.dispatch_request()</pre>
+<pre class="line after"><span class="ws">        </span>except Exception as e:</pre>
+<pre class="line after"><span class="ws">            </span>rv = self.handle_user_exception(e)</pre>
+<pre class="line after"><span class="ws">        </span>return self.finalize_request(rv)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def finalize_request(</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338092320">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/flask/app.py"</cite>,
+      line <em class="line">865</em>,
+      in <code class="function">dispatch_request</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">            </span>and req.method == &#34;OPTIONS&#34;</pre>
+<pre class="line before"><span class="ws">        </span>):</pre>
+<pre class="line before"><span class="ws">            </span>return self.make_default_options_response()</pre>
+<pre class="line before"><span class="ws">        </span># otherwise dispatch to the handler for that endpoint</pre>
+<pre class="line before"><span class="ws">        </span>view_args: dict[str, t.Any] = req.view_args  # type: ignore[assignment]</pre>
+<pre class="line current"><span class="ws">        </span>return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def full_dispatch_request(self) -&gt; Response:</pre>
+<pre class="line after"><span class="ws">        </span>&#34;&#34;&#34;Dispatches the request and on top of that performs request</pre>
+<pre class="line after"><span class="ws">        </span>pre and postprocessing as well as HTTP exception catching and</pre>
+<pre class="line after"><span class="ws">        </span>error handling.</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338092432">
+  <h4>File <cite class="filename">"/app/app.py"</cite>,
+      line <em class="line">56</em>,
+      in <code class="function">create_properties</code></h4>
+  <div class="source "><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws"></span>@app.route(&#39;/api/property&#39;, methods=[&#39;POST&#39;])</pre>
+<pre class="line before"><span class="ws"></span>def create_properties():</pre>
+<pre class="line before"><span class="ws">    </span>data = request.json  # This should be a list of property objects</pre>
+<pre class="line before"><span class="ws">    </span>for property_data in data:</pre>
+<pre class="line current"><span class="ws">        </span>new_property = Property(**property_data)</pre>
+<pre class="line after"><span class="ws">        </span>db.session.add(new_property)</pre>
+<pre class="line after"><span class="ws">    </span>db.session.commit()</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>return jsonify({</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338108992">
+  <h4>File <cite class="filename">"&lt;string&gt;"</cite>,
+      line <em class="line">4</em>,
+      in <code class="function">__init__</code></h4>
+  <div class="source "></div>
+</div>
+
+<li><div class="frame" id="frame-139899338109104">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/state.py"</cite>,
+      line <em class="line">572</em>,
+      in <code class="function">_initialize_instance</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line before"><span class="ws">            </span>manager.original_init(*mixed[1:], **kwargs)</pre>
+<pre class="line before"><span class="ws">        </span>except:</pre>
+<pre class="line before"><span class="ws">            </span>with util.safe_reraise():</pre>
+<pre class="line current"><span class="ws">                </span>manager.dispatch.init_failure(self, args, kwargs)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def get_history(self, key: str, passive: PassiveFlag) -&gt; History:</pre>
+<pre class="line after"><span class="ws">        </span>return self.manager[key].impl.get_history(self, self.dict, passive)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def get_impl(self, key: str) -&gt; AttributeImpl:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338109328">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py"</cite>,
+      line <em class="line">146</em>,
+      in <code class="function">__exit__</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span># see #2703 for notes</pre>
+<pre class="line before"><span class="ws">        </span>if type_ is None:</pre>
+<pre class="line before"><span class="ws">            </span>exc_type, exc_value, exc_tb = self._exc_info</pre>
+<pre class="line before"><span class="ws">            </span>assert exc_value is not None</pre>
+<pre class="line before"><span class="ws">            </span>self._exc_info = None  # remove potential circular references</pre>
+<pre class="line current"><span class="ws">            </span>raise exc_value.with_traceback(exc_tb)</pre>
+<pre class="line after"><span class="ws">        </span>else:</pre>
+<pre class="line after"><span class="ws">            </span>self._exc_info = None  # remove potential circular references</pre>
+<pre class="line after"><span class="ws">            </span>assert value is not None</pre>
+<pre class="line after"><span class="ws">            </span>raise value.with_traceback(traceback)</pre>
+<pre class="line after"><span class="ws"></span> </pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338109440">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/state.py"</cite>,
+      line <em class="line">569</em>,
+      in <code class="function">_initialize_instance</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">        </span>manager = self.manager</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>manager.dispatch.init(self, args, kwargs)</pre>
+<pre class="line before"><span class="ws"></span> </pre>
+<pre class="line before"><span class="ws">        </span>try:</pre>
+<pre class="line current"><span class="ws">            </span>manager.original_init(*mixed[1:], **kwargs)</pre>
+<pre class="line after"><span class="ws">        </span>except:</pre>
+<pre class="line after"><span class="ws">            </span>with util.safe_reraise():</pre>
+<pre class="line after"><span class="ws">                </span>manager.dispatch.init_failure(self, args, kwargs)</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws">    </span>def get_history(self, key: str, passive: PassiveFlag) -&gt; History:</pre></div>
+</div>
+
+<li><div class="frame" id="frame-139899338109552">
+  <h4>File <cite class="filename">"/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/decl_base.py"</cite>,
+      line <em class="line">2167</em>,
+      in <code class="function">_declarative_constructor</code></h4>
+  <div class="source library"><pre class="line before"><span class="ws">    </span>for example, any mapped columns or relationships.</pre>
+<pre class="line before"><span class="ws">    </span>&#34;&#34;&#34;</pre>
+<pre class="line before"><span class="ws">    </span>cls_ = type(self)</pre>
+<pre class="line before"><span class="ws">    </span>for k in kwargs:</pre>
+<pre class="line before"><span class="ws">        </span>if not hasattr(cls_, k):</pre>
+<pre class="line current"><span class="ws">            </span>raise TypeError(</pre>
+<pre class="line after"><span class="ws">                </span>&#34;%r is an invalid keyword argument for %s&#34; % (k, cls_.__name__)</pre>
+<pre class="line after"><span class="ws">            </span>)</pre>
+<pre class="line after"><span class="ws">        </span>setattr(self, k, kwargs[k])</pre>
+<pre class="line after"><span class="ws"></span> </pre>
+<pre class="line after"><span class="ws"></span> </pre></div>
+</div>
+</ul>
+  <blockquote>TypeError: &#39;typeobject&#39; is an invalid keyword argument for Property
+</blockquote>
+</div>
+
+<div class="plain">
+    <p>
+      This is the Copy/Paste friendly version of the traceback.
+    </p>
+    <textarea cols="50" rows="10" name="code" readonly>Traceback (most recent call last):
+  File &#34;/usr/local/lib/python3.9/site-packages/flask/app.py&#34;, line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File &#34;/usr/local/lib/python3.9/site-packages/flask/app.py&#34;, line 1476, in wsgi_app
+    response = self.handle_exception(e)
+  File &#34;/usr/local/lib/python3.9/site-packages/flask/app.py&#34;, line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File &#34;/usr/local/lib/python3.9/site-packages/flask/app.py&#34;, line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File &#34;/usr/local/lib/python3.9/site-packages/flask/app.py&#34;, line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File &#34;/usr/local/lib/python3.9/site-packages/flask/app.py&#34;, line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File &#34;/app/app.py&#34;, line 56, in create_properties
+    new_property = Property(**property_data)
+  File &#34;&lt;string&gt;&#34;, line 4, in __init__
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/state.py&#34;, line 572, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py&#34;, line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/state.py&#34;, line 569, in _initialize_instance
+    manager.original_init(*mixed[1:], **kwargs)
+  File &#34;/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/decl_base.py&#34;, line 2167, in _declarative_constructor
+    raise TypeError(
+TypeError: &#39;typeobject&#39; is an invalid keyword argument for Property
+</textarea>
+</div>
+<div class="explanation">
+  The debugger caught an exception in your WSGI application.  You can now
+  look at the traceback which led to the error.  <span class="nojavascript">
+  If you enable JavaScript you can also use additional features such as code
+  execution (if the evalex feature is enabled), automatic pasting of the
+  exceptions and much more.</span>
+</div>
+      <div class="footer">
+        Brought to you by <strong class="arthur">DON'T PANIC</strong>, your
+        friendly Werkzeug powered traceback interpreter.
+      </div>
+    </div>
+
+    <div class="pin-prompt">
+      <div class="inner">
+        <h3>Console Locked</h3>
+        <p>
+          The console is locked and needs to be unlocked by entering the PIN.
+          You can find the PIN printed out on the standard output of your
+          shell that runs the server.
+        <form>
+          <p>PIN:
+            <input type=text name=pin size=14>
+            <input type=submit name=btn value="Confirm Pin">
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
+
+<!--
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1498, in __call__
+    return self.wsgi_app(environ, start_response)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1476, in wsgi_app
+    response = self.handle_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 1473, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 882, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 880, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/usr/local/lib/python3.9/site-packages/flask/app.py", line 865, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+  File "/app/app.py", line 56, in create_properties
+    new_property = Property(**property_data)
+  File "<string>", line 4, in __init__
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 572, in _initialize_instance
+    manager.dispatch.init_failure(self, args, kwargs)
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/util/langhelpers.py", line 146, in __exit__
+    raise exc_value.with_traceback(exc_tb)
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/state.py", line 569, in _initialize_instance
+    manager.original_init(*mixed[1:], **kwargs)
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/decl_base.py", line 2167, in _declarative_constructor
+    raise TypeError(
+TypeError: 'typeobject' is an invalid keyword argument for Property
+
+
+-->
+[2024-09-17T08:18:12.896+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-17T08:18:12.908+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-17T08:18:12.909+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=real_estate_pipeline, task_id=push_delta, run_id=manual__2024-09-17T08:16:35.319255+00:00, execution_date=20240917T081635, start_date=20240917T081812, end_date=20240917T081812
+[2024-09-17T08:18:12.990+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-17T08:18:13.014+0000] {taskinstance.py:3900} INFO - 0 downstream tasks scheduled from follow-on schedule check
+[2024-09-17T08:18:13.016+0000] {local_task_job_runner.py:245} INFO - ::endgroup::

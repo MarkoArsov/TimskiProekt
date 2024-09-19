@@ -1,0 +1,18 @@
+[2024-09-17T09:11:49.444+0000] {local_task_job_runner.py:123} INFO - ::group::Pre task execution logs
+[2024-09-17T09:11:49.476+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: real_estate_pipeline.scrape_delta manual__2024-09-17T09:10:49.769301+00:00 [queued]>
+[2024-09-17T09:11:49.498+0000] {taskinstance.py:2612} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: real_estate_pipeline.scrape_delta manual__2024-09-17T09:10:49.769301+00:00 [queued]>
+[2024-09-17T09:11:49.500+0000] {taskinstance.py:2865} INFO - Starting attempt 1 of 1
+[2024-09-17T09:11:49.561+0000] {taskinstance.py:2888} INFO - Executing <Task(PythonOperator): scrape_delta> on 2024-09-17 09:10:49.769301+00:00
+[2024-09-17T09:11:49.568+0000] {standard_task_runner.py:104} INFO - Running: ['airflow', 'tasks', 'run', 'real_estate_pipeline', 'scrape_delta', 'manual__2024-09-17T09:10:49.769301+00:00', '--job-id', '122', '--raw', '--subdir', 'DAGS_FOLDER/real_estate_dag.py', '--cfg-path', '/tmp/tmpj6lbp5k3']
+[2024-09-17T09:11:49.570+0000] {standard_task_runner.py:105} INFO - Job 122: Subtask scrape_delta
+[2024-09-17T09:11:49.579+0000] {logging_mixin.py:190} WARNING - /home/airflow/.local/lib/python3.12/site-packages/airflow/task/task_runner/standard_task_runner.py:70 DeprecationWarning: This process (pid=154) is multi-threaded, use of fork() may lead to deadlocks in the child.
+[2024-09-17T09:11:49.580+0000] {standard_task_runner.py:72} INFO - Started process 171 to run task
+[2024-09-17T09:11:49.665+0000] {task_command.py:467} INFO - Running <TaskInstance: real_estate_pipeline.scrape_delta manual__2024-09-17T09:10:49.769301+00:00 [running]> on host 1083859d72d8
+[2024-09-17T09:11:49.799+0000] {taskinstance.py:3131} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='airflow' AIRFLOW_CTX_DAG_ID='real_estate_pipeline' AIRFLOW_CTX_TASK_ID='scrape_delta' AIRFLOW_CTX_EXECUTION_DATE='2024-09-17T09:10:49.769301+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='manual__2024-09-17T09:10:49.769301+00:00'
+[2024-09-17T09:11:49.800+0000] {taskinstance.py:731} INFO - ::endgroup::
+[2024-09-17T09:11:55.739+0000] {python.py:240} INFO - Done. Returned value was: None
+[2024-09-17T09:11:55.760+0000] {taskinstance.py:340} INFO - ::group::Post task execution logs
+[2024-09-17T09:11:55.761+0000] {taskinstance.py:352} INFO - Marking task as SUCCESS. dag_id=real_estate_pipeline, task_id=scrape_delta, run_id=manual__2024-09-17T09:10:49.769301+00:00, execution_date=20240917T091049, start_date=20240917T091149, end_date=20240917T091155
+[2024-09-17T09:11:55.832+0000] {local_task_job_runner.py:266} INFO - Task exited with return code 0
+[2024-09-17T09:11:55.888+0000] {taskinstance.py:3900} INFO - 1 downstream tasks scheduled from follow-on schedule check
+[2024-09-17T09:11:55.908+0000] {local_task_job_runner.py:245} INFO - ::endgroup::
